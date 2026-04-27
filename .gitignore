@@ -1,0 +1,18 @@
+# OS / 편집기
+Thumbs.db
+Desktop.ini
+.DS_Store
+*~
+*.swp
+.vscode/*
+!.vscode/extensions.json
+.idea/
+
+# 로그·캐시
+*.log
+.cache/
+
+# 환경·비밀(실수로 넣는 경우)
+.env
+.env.*
+*.local
