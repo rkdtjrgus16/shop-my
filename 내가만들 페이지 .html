@@ -276,16 +276,26 @@
       position: absolute;
       top: 10px;
       right: 10px;
+      display: flex;
+      align-items: center;
+      gap: 5px;
       color: white;
       font-size: 10px;
       font-weight: 800;
-      padding: 4px 10px;
+      padding: 5px 10px 5px 6px;
       border-radius: 20px;
-      letter-spacing: 0.6px;
+      letter-spacing: 0.5px;
       backdrop-filter: blur(6px);
-      border: 1px solid rgba(255,255,255,0.3);
-      box-shadow: 0 2px 10px rgba(0,0,0,0.25);
-      text-shadow: 0 1px 4px rgba(0,0,0,0.3);
+      border: 1px solid rgba(255,255,255,0.35);
+      box-shadow: 0 2px 12px rgba(0,0,0,0.3);
+      text-shadow: 0 1px 3px rgba(0,0,0,0.25);
+    }
+    .cat-card-badge img {
+      width: 16px;
+      height: 16px;
+      object-fit: contain;
+      filter: drop-shadow(0 1px 2px rgba(0,0,0,0.3));
+      flex-shrink: 0;
     }
     .badge-all      { background: linear-gradient(135deg, #667eea, #764ba2); }
     .badge-fashion  { background: linear-gradient(135deg, #f7971e, #ffd200); color: #1a1a1a; text-shadow: none; }
@@ -1192,6 +1202,118 @@
       .chatbot-window { width: calc(100vw - 20px); right: 10px; bottom: 90px; }
       .chatbot-fab { bottom: 16px; right: 16px; }
     }
+
+    /* ===== 다크모드 토글 버튼 ===== */
+    .dark-toggle {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      border: 2px solid #e0e0e0;
+      background: transparent;
+      cursor: pointer;
+      font-size: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.25s;
+      flex-shrink: 0;
+    }
+    .dark-toggle:hover { border-color: var(--primary); transform: rotate(20deg); }
+
+    /* ===== 다크모드 전역 ===== */
+    body.dark {
+      background: #13141a;
+      color: #e8e8f0;
+    }
+    body.dark header {
+      background: #1e1f26;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+    }
+    body.dark .logo span { color: #e8e8f0; }
+    body.dark .dark-toggle { border-color: #444; color: #e8e8f0; }
+    body.dark .dark-toggle:hover { border-color: var(--primary); }
+
+    /* 버튼 */
+    body.dark .btn-outline { border-color: var(--primary); color: var(--primary); }
+    body.dark .cart-btn { background: #2c2d38; }
+    body.dark .cart-btn:hover { background: #3a3b4a; }
+
+    /* 카테고리 텍스트 버튼 */
+    body.dark .cat-btn { background: #2c2d38; border-color: #3a3b4a; color: #ccc; }
+    body.dark .cat-btn.active, body.dark .cat-btn:hover { background: var(--primary); color: #fff; border-color: var(--primary); }
+
+    /* 섹션 타이틀 */
+    body.dark .section-title { color: #e8e8f0; }
+    body.dark .section-subtitle { color: #999; }
+
+    /* 상품 카드 */
+    body.dark .product-card { background: #1e1f26; box-shadow: 0 4px 20px rgba(0,0,0,0.35); }
+    body.dark .product-name { color: #e8e8f0; }
+    body.dark .product-img-wrap { background: #2c2d38; }
+    body.dark .btn-wish { background: #2c2d38; color: #bbb; }
+    body.dark .btn-wish:hover { background: #3a2b2b; }
+
+    /* 상품 등록 섹션 */
+    body.dark .add-product-section { background: #1e1f26; box-shadow: 0 4px 20px rgba(0,0,0,0.35); }
+    body.dark .add-product-section h3 { color: #e8e8f0; }
+    body.dark .add-product-section p { color: #999; }
+
+    /* 모달 */
+    body.dark .modal { background: #1e1f26; color: #e8e8f0; }
+    body.dark .modal-close { color: #888; }
+    body.dark .modal-close:hover { color: #e8e8f0; }
+    body.dark .modal-sub { color: #999; }
+    body.dark .form-group label { color: #ccc; }
+    body.dark .form-group input,
+    body.dark .form-group textarea,
+    body.dark .form-group select {
+      background: #2c2d38;
+      border-color: #3a3b4a;
+      color: #e8e8f0;
+    }
+    body.dark .form-group input::placeholder,
+    body.dark .form-group textarea::placeholder { color: #666; }
+    body.dark .form-group input:focus,
+    body.dark .form-group textarea:focus,
+    body.dark .form-group select:focus { border-color: var(--primary); }
+    body.dark .form-divider::before,
+    body.dark .form-divider::after { background: #3a3b4a; }
+    body.dark .switch-form { color: #999; }
+
+    /* 이미지 업로드 */
+    body.dark .img-upload-area { background: #2c2d38; border-color: #444; }
+    body.dark .img-upload-area:hover { background: #33212a; border-color: var(--primary); }
+    body.dark .img-upload-area p { color: #888; }
+    body.dark .preview-item { border-color: #444; }
+
+    /* 장바구니 */
+    body.dark .cart-item { border-bottom-color: #2c2d38; }
+    body.dark .cart-item-name { color: #e8e8f0; }
+    body.dark .cart-item-img { background: #2c2d38; }
+    body.dark .cart-total { background: #2c2d38; }
+    body.dark .qty-btn { background: #3a3b4a; color: #e8e8f0; border-color: #444; }
+    body.dark .qty-btn:hover { background: #4a4b5a; }
+    body.dark .cart-empty { color: #666; }
+
+    /* 챗봇 */
+    body.dark .chatbot-window { background: #1e1f26; border-color: #3a3b4a; }
+    body.dark .chatbot-header { background: linear-gradient(135deg, #667eea, #764ba2); }
+    body.dark .chatbot-messages { background: #13141a; }
+    body.dark .msg-bot .msg-bubble { background: #2c2d38; color: #e8e8f0; }
+    body.dark .chatbot-input-row { background: #2c2d38; border-top-color: #3a3b4a; }
+    body.dark .chatbot-input-row input {
+      background: #2c2d38;
+      color: #e8e8f0;
+      border-color: transparent;
+    }
+    body.dark .chatbot-input-row input::placeholder { color: #666; }
+
+    /* 전환 애니메이션 */
+    body, header, .product-card, .modal, .add-product-section,
+    .cat-btn, .form-group input, .form-group textarea,
+    .form-group select, .chatbot-window, .chatbot-messages {
+      transition: background 0.3s, color 0.3s, border-color 0.3s, box-shadow 0.3s;
+    }
   </style>
 </head>
 <body>
@@ -1201,6 +1323,7 @@
   <div class="header-inner">
     <div class="logo" onclick="scrollToTop()">MY<span>SHOP</span></div>
     <div class="header-actions" id="headerActions">
+      <button class="dark-toggle" id="darkToggleBtn" onclick="toggleDark()" title="다크모드 전환">🌙</button>
       <button class="btn btn-outline" onclick="openModal('loginModal')">로그인</button>
       <button class="btn btn-primary" onclick="openModal('registerModal')">회원가입</button>
       <button class="cart-btn" onclick="openModal('cartModal')">
@@ -1235,7 +1358,7 @@
         <div class="cat-card-emoji">🛍️</div>
         <div class="cat-card-label">전체</div>
       </div>
-      <span class="cat-card-badge badge-all">✦ ALL</span>
+      <span class="cat-card-badge badge-all"><img src="https://img.icons8.com/fluency/32/shopping-bag.png" alt="">ALL</span>
     </div>
     <div class="cat-card" onclick="filterCategoryCard('fashion', this)">
       <img src="https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=600&q=85" alt="패션" loading="lazy" />
@@ -1243,7 +1366,7 @@
         <div class="cat-card-emoji">👗</div>
         <div class="cat-card-label">패션</div>
       </div>
-      <span class="cat-card-badge badge-fashion">🔥 HOT</span>
+      <span class="cat-card-badge badge-fashion"><img src="https://img.icons8.com/fluency/32/fire-element--v1.png" alt="">HOT</span>
     </div>
     <div class="cat-card" onclick="filterCategoryCard('beauty', this)">
       <img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=600&q=85" alt="뷰티" loading="lazy" />
@@ -1251,7 +1374,7 @@
         <div class="cat-card-emoji">💄</div>
         <div class="cat-card-label">뷰티</div>
       </div>
-      <span class="cat-card-badge badge-beauty">✨ K-BEAUTY</span>
+      <span class="cat-card-badge badge-beauty"><img src="https://img.icons8.com/fluency/32/lipstick.png" alt="">K-BEAUTY</span>
     </div>
     <div class="cat-card" onclick="filterCategoryCard('food', this)">
       <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=600&q=85" alt="식품" loading="lazy" />
@@ -1259,7 +1382,7 @@
         <div class="cat-card-emoji">🍱</div>
         <div class="cat-card-label">식품</div>
       </div>
-      <span class="cat-card-badge badge-food">🌿 FRESH</span>
+      <span class="cat-card-badge badge-food"><img src="https://img.icons8.com/fluency/32/salad.png" alt="">FRESH</span>
     </div>
     <div class="cat-card" onclick="filterCategoryCard('digital', this)">
       <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=600&q=85" alt="디지털" loading="lazy" />
@@ -1267,7 +1390,7 @@
         <div class="cat-card-emoji">💻</div>
         <div class="cat-card-label">디지털</div>
       </div>
-      <span class="cat-card-badge badge-digital">⚡ TECH</span>
+      <span class="cat-card-badge badge-digital"><img src="https://img.icons8.com/fluency/32/processor.png" alt="">TECH</span>
     </div>
     <div class="cat-card" onclick="filterCategoryCard('home', this)">
       <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=600&q=85" alt="홈/리빙" loading="lazy" />
@@ -1275,7 +1398,7 @@
         <div class="cat-card-emoji">🏠</div>
         <div class="cat-card-label">홈/리빙</div>
       </div>
-      <span class="cat-card-badge badge-home">🪴 LIVING</span>
+      <span class="cat-card-badge badge-home"><img src="https://img.icons8.com/fluency/32/home.png" alt="">LIVING</span>
     </div>
   </div>
 
@@ -1510,6 +1633,22 @@
 
 <!-- ==================== JavaScript ==================== -->
 <script>
+// ===== 다크모드 =====
+function toggleDark() {
+  const isDark = document.body.classList.toggle('dark');
+  localStorage.setItem('myshop_dark', isDark ? '1' : '0');
+  document.getElementById('darkToggleBtn').textContent = isDark ? '☀️' : '🌙';
+}
+(function initDark() {
+  if (localStorage.getItem('myshop_dark') === '1') {
+    document.body.classList.add('dark');
+    document.addEventListener('DOMContentLoaded', () => {
+      const btn = document.getElementById('darkToggleBtn');
+      if (btn) btn.textContent = '☀️';
+    });
+  }
+})();
+
 // ===== 상태 관리 =====
 let currentUser = null;
 let users = JSON.parse(localStorage.getItem('myshop_users') || '[]');
